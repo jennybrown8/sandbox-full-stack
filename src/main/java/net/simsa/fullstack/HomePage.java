@@ -35,7 +35,7 @@ public class HomePage extends WebPage {
 			}
 
 			@Inject
-			EntityManager em; // 2
+			EntityManager em;
 
 			@Override
 			protected Long load()
