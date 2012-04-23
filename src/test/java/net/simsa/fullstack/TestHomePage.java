@@ -1,5 +1,7 @@
 package net.simsa.fullstack;
 
+import net.simsa.fullstack.pages.HomePage;
+
 import org.apache.wicket.util.tester.WicketTester;
 import org.junit.Before;
 import org.junit.Test;

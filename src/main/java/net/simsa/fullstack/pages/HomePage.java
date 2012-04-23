@@ -1,4 +1,4 @@
-package net.simsa.fullstack;
+package net.simsa.fullstack.pages;
 
 import java.util.Iterator;
 
@@ -14,9 +14,9 @@ import net.simsa.fullstack.model.UserMeta;
 
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
+import org.apache.wicket.markup.html.link.BookmarkablePageLink;
 import org.apache.wicket.markup.repeater.Item;
 import org.apache.wicket.markup.repeater.data.DataView;
-import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.LoadableDetachableModel;
 import org.apache.wicket.model.PropertyModel;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
@@ -40,7 +40,13 @@ public class HomePage extends WebPage {
 			{
 				item.add(new Label("first", MetaModel.of(item.getModel()).get(UserMeta.firstName)));
 				item.add(new Label("last", MetaModel.of(item.getModel()).get(UserMeta.lastName)));
-				item.add(new Label("email", MetaModel.of(item.getModel()).get(UserMeta.email)));
+				
+				PageParameters pageParams = new PageParameters();
+				pageParams.add("email", MetaModel.of(item.getModel()).get(UserMeta.email).getObject());
+				
+				BookmarkablePageLink<Void> link = new BookmarkablePageLink<Void>("link", EmailPage.class, pageParams);
+				link.add(new Label("email", MetaModel.of(item.getModel()).get(UserMeta.email)));
+				item.add(link);
 			}
 		});
 
