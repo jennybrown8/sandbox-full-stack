@@ -31,6 +31,9 @@
 	</filter-mapping>
 	
 	<listener>
-	  <listener-class>org.jboss.weld.environment.servlet.Listener</listener-class>
+		 <listener-class>org.jboss.weld.environment.servlet.Listener</listener-class>
+	</listener>	
+	<listener>
+    	 <listener-class>net.simsa.fullstack.events.ApplicationLifecycleNotifier</listener-class>
 	</listener>	
 </web-app>
