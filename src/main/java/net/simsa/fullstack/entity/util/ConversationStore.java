@@ -7,6 +7,9 @@ import java.util.UUID;
 
 import javax.enterprise.context.ConversationScoped;
 
+/**
+ * Storage for conversation-scope objects. See https://www.42lines.net/2011/11/29/leveraging-conversations/
+ */
 @ConversationScoped
 public class ConversationStore implements Serializable {
 	private Map<UUID, Object> store = new HashMap<UUID, Object>();

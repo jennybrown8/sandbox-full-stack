@@ -8,6 +8,10 @@ import java.lang.annotation.Target;
 
 import javax.interceptor.InterceptorBinding;
 
+/**
+ * Indicates that the marked method should be run in a Conversation scope context, so that the EntityManager
+ * remains available for the entire conversation (possibly more than one request/response cycle).
+ */
 @Target({ ElementType.METHOD, ElementType.TYPE })
 @Retention(RetentionPolicy.RUNTIME)
 @Documented

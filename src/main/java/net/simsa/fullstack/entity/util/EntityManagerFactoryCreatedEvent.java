@@ -1,4 +1,4 @@
-package net.simsa.fullstack.model;
+package net.simsa.fullstack.entity.util;
 
 import javax.persistence.EntityManagerFactory;
 

@@ -9,6 +9,11 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.FlushModeType;
 
+/**
+ * A way to begin/apply/cancel a set of entity modifications based on user activity; this handles the entity
+ * manager manipulation to clear partially changed entities, or to commit the results, transactionally. See
+ * https://www.42lines.net/2011/12/01/simplifying-non-trivial-user-workflows-with-conversations/
+ */
 @ConversationScoped
 public class UserAction implements Serializable {
 

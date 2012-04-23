@@ -11,7 +11,7 @@ import org.jboss.weld.environment.servlet.Listener;
  * Application object for your web application. If you want to run this application without deploying, run the
  * Start class.
  * 
- * @see net.simsa..Start#main(String[])
+ * @see net.simsa.fullstack.Start#main(String[])
  */
 public class WicketApplication extends WebApplication {
 	/**

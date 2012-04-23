@@ -6,6 +6,10 @@ import javax.interceptor.Interceptor;
 import javax.interceptor.InvocationContext;
 import javax.persistence.EntityManager;
 
+/**
+ * Does the work of beginning, committing, or rolling back a transaction; implementation to match the
+ * Transactional annotation.
+ */
 @Transactional
 @Interceptor
 public class TransactionalInterceptor {

@@ -8,6 +8,10 @@ import net.ftlines.wicket.cdi.CdiContainer;
 
 import org.apache.wicket.model.IModel;
 
+/**
+ * Similar to an EntityModel, but holds the object in a Conversation scope. 
+ * @param <T>
+ */
 public class ConversationModel<T> implements IModel<T> {
 
 	@Inject

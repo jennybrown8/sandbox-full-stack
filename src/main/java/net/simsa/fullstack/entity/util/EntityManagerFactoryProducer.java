@@ -8,7 +8,6 @@ import javax.inject.Inject;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import net.simsa.fullstack.model.EntityManagerFactoryCreatedEvent;
 
 public class EntityManagerFactoryProducer {
 

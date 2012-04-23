@@ -15,6 +15,10 @@ import org.jboss.weld.context.bound.BoundRequest;
 import org.jboss.weld.context.bound.MutableBoundRequest;
 import org.jboss.weld.context.http.Http;
 
+/**
+ * Wraps a section of code in a Conversation, whether that's a pre-existing one or a new one.
+ * See https://www.42lines.net/2011/12/07/conversations-and-transactions-in-worker-threads/ 
+ */
 @Conversational
 @Interceptor
 public class ConversationalInterceptor {

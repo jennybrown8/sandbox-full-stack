@@ -10,6 +10,9 @@ import net.ftlines.wicket.cdi.NonContextual;
 
 import org.jboss.weld.environment.servlet.Listener;
 
+/**
+ * Fires the ApplicationStartedEvent when the servlet context starts up at web server startup.
+ */
 public class ApplicationLifecycleNotifier implements ServletContextListener {
 	@Inject
 	Event<ApplicationStartedEvent> started;

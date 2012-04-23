@@ -1,12 +1,14 @@
-package net.simsa.fullstack.entity.util;
+package net.simsa.fullstack.model;
 
 import javax.enterprise.event.Observes;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 
-import net.simsa.fullstack.model.EntityManagerFactoryCreatedEvent;
-import net.simsa.fullstack.model.User;
+import net.simsa.fullstack.entity.util.EntityManagerFactoryCreatedEvent;
 
+/**
+ * Dummy class to pre-populate the database with some fake data. 
+ */
 public class ModelInitializer {
 	  private final String[] firstNames = { "Jacob", "Emily" };
 	  private final String[] lastNames = { "Smith", "Johnson" };
