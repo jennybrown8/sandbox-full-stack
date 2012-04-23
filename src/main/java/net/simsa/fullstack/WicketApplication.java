@@ -3,8 +3,9 @@ package net.simsa.fullstack;
 import javax.enterprise.inject.spi.BeanManager;
 
 import net.ftlines.wicket.cdi.CdiConfiguration;
-import net.simsa.fullstack.pages.HomePage;
+import net.ftlines.wicketsource.WicketSource;
 import net.simsa.fullstack.pages.EmailPage;
+import net.simsa.fullstack.pages.HomePage;
 
 import org.apache.wicket.protocol.http.WebApplication;
 import org.jboss.weld.environment.servlet.Listener;
@@ -16,7 +17,7 @@ import org.jboss.weld.environment.servlet.Listener;
  * @see net.simsa.fullstack.Start#main(String[])
  */
 public class WicketApplication extends WebApplication {
-	
+
 	/**
 	 * @see org.apache.wicket.Application#getHomePage()
 	 */
@@ -36,14 +37,14 @@ public class WicketApplication extends WebApplication {
 
 		BeanManager manager = (BeanManager) getServletContext().getAttribute(Listener.BEAN_MANAGER_ATTRIBUTE_NAME);
 		new CdiConfiguration(manager).configure(this);
-		
-		// in application servers you can retrieve the bean manager from JNDI:
 
-		// manager = (BeanManager)new
-		// InitialContext().lookup("java:comp/BeanManager");
-		
+		WicketSource.configure(this);
+
+		// in application servers you can retrieve the bean manager from JNDI:
+		// manager = (BeanManager)new InitialContext().lookup("java:comp/BeanManager");
+
 		// Want to mount any pages?
 		mountPage("/send", EmailPage.class);
-		
+
 	}
 }

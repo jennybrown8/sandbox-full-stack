@@ -34,7 +34,11 @@
 			<artifactId>wicket-extensions</artifactId>
 			<version>${wicket.version}</version>
 		</dependency>
-
+		<dependency>
+			<groupId>net.ftlines.wicket-source</groupId>
+			<artifactId>wicket-source</artifactId>
+			<version>1.5.0_06</version>
+		</dependency>
 		<dependency>
 			<groupId>net.ftlines.metagen</groupId>
 			<artifactId>metagen-core</artifactId>
