@@ -5,10 +5,12 @@ import java.util.Iterator;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 
+import net.ftlines.metagen.wicket.MetaModel;
 import net.ftlines.wicket.cdi.CdiContainer;
 import net.simsa.fullstack.entity.util.EntityProvider;
 import net.simsa.fullstack.model.Clock;
 import net.simsa.fullstack.model.User;
+import net.simsa.fullstack.model.UserMeta;
 
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
@@ -49,10 +51,9 @@ public class HomePage extends WebPage {
 			@Override
 			protected void populateItem(Item<User> item)
 			{
-				IModel<User> user = item.getModel();
-				item.add(new Label("first", new PropertyModel<String>(user, "firstName")));
-				item.add(new Label("last", new PropertyModel<String>(user, "lastName")));
-				item.add(new Label("email", new PropertyModel<String>(user, "email")));
+				item.add(new Label("first", MetaModel.of(item.getModel()).get(UserMeta.firstName)));
+				item.add(new Label("last", MetaModel.of(item.getModel()).get(UserMeta.lastName)));
+				item.add(new Label("email", MetaModel.of(item.getModel()).get(UserMeta.email)));
 			}
 		});
 

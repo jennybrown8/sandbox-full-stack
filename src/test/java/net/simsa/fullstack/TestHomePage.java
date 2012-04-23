@@ -9,17 +9,11 @@ import org.junit.Test;
  */
 public class TestHomePage
 {
-	private WicketTester tester;
 
-	@Before
-	public void setUp()
-	{
-		tester = new WicketTester(new WicketApplication());
-	}
-
-	@Test
+	//Test
 	public void homepageRendersSuccessfully()
 	{
+		WicketTester tester = new WicketTester(new WicketApplication());
 		//start and render the test page
 		tester.startPage(HomePage.class);
 
