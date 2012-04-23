@@ -1,4 +1,4 @@
-package net.simsa.fullstack;
+package net.simsa.fullstack.entity.util;
 
 import net.ftlines.wicket.cdi.CdiContainer;
 
