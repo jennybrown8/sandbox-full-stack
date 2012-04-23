@@ -7,6 +7,7 @@ import javax.persistence.EntityManager;
 
 import net.ftlines.wicket.cdi.CdiContainer;
 import net.simsa.fullstack.entity.util.EntityProvider;
+import net.simsa.fullstack.model.Clock;
 import net.simsa.fullstack.model.User;
 
 import org.apache.wicket.markup.html.WebPage;
