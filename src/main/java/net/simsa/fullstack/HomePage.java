@@ -30,22 +30,9 @@ public class HomePage extends WebPage {
 	public HomePage(final PageParameters parameters)
 	{
 		add(new Label("version", getApplication().getFrameworkSettings().getVersion()));
-		add(new Label("clock", new PropertyModel(this, "clock.time")));
+		add(new Label("clock", new PropertyModel<String>(this, "clock.time")));
 
-		add(new Label("count", new LoadableDetachableModel() {
-			{
-				CdiContainer.get().getNonContextualManager().inject(this); // 1
-			}
-
-			@Inject
-			EntityManager em;
-
-			@Override
-			protected Long load()
-			{
-				return (Long) em.createQuery("SELECT COUNT(*) FROM User").getSingleResult(); // 3
-			}
-		}));
+		add(new Label("count", new CountModel()));
 
 		add(new DataView<User>("users", new UserProvider()) {
 			@Override
@@ -57,6 +44,20 @@ public class HomePage extends WebPage {
 			}
 		});
 
+	}
+
+	public final class CountModel extends LoadableDetachableModel<Long> {
+		{
+			CdiContainer.get().getNonContextualManager().inject(this);
+		}
+		@Inject
+		EntityManager em;
+
+		@Override
+		protected Long load()
+		{
+			return (Long) em.createQuery("SELECT COUNT(*) FROM User").getSingleResult();
+		}
 	}
 
 	private static class UserProvider extends EntityProvider<User> {
