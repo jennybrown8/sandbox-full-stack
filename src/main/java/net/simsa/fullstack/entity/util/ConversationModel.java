@@ -4,8 +4,7 @@ import java.util.UUID;
 
 import javax.inject.Inject;
 
-import net.ftlines.wicket.cdi.CdiContainer;
-
+import org.apache.wicket.cdi.CdiContainer;
 import org.apache.wicket.model.IModel;
 
 /**

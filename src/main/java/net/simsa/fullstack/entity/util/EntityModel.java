@@ -3,8 +3,7 @@ package net.simsa.fullstack.entity.util;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 
-import net.ftlines.wicket.cdi.CdiContainer;
-
+import org.apache.wicket.cdi.CdiContainer;
 import org.apache.wicket.model.IModel;
 
 /**

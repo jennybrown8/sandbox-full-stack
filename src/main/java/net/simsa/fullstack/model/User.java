@@ -6,6 +6,11 @@ import javax.persistence.Id;
 
 @Entity
 public class User {
+	
+	public static enum UserSort {
+		ID, FIRSTNAME, LASTNAME, EMAIL
+	}
+	
 	@GeneratedValue
 	@Id
 	Long id;

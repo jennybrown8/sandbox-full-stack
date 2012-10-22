@@ -6,12 +6,13 @@ import javax.inject.Inject;
 import javax.persistence.EntityManager;
 
 import net.ftlines.metagen.wicket.MetaModel;
-import net.ftlines.wicket.cdi.CdiContainer;
 import net.simsa.fullstack.entity.util.EntityProvider;
 import net.simsa.fullstack.model.Clock;
 import net.simsa.fullstack.model.User;
+import net.simsa.fullstack.model.User.UserSort;
 import net.simsa.fullstack.model.UserMeta;
 
+import org.apache.wicket.cdi.CdiContainer;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.link.BookmarkablePageLink;
@@ -66,20 +67,20 @@ public class HomePage extends WebPage {
 		}
 	}
 
-	private static class UserProvider extends EntityProvider<User> {
+	private static class UserProvider extends EntityProvider<User,UserSort> {
 		@Inject
 		EntityManager em;
 
-		public Iterator<User> iterator(int first, int count)
+		public Iterator<? extends User> iterator(long first, long count)
 		{
-			return em.createQuery("FROM User").setFirstResult(first).setMaxResults(count).getResultList()
+			return em.createQuery("FROM User", User.class).setFirstResult( (int) first).setMaxResults( (int)count).getResultList()
 					.iterator();
 		}
 
-		public int size()
+		public long size()
 		{
 			Long count = (Long) em.createQuery("SELECT COUNT(*) FROM User").getSingleResult();
-			return count.intValue();
+			return count.longValue();
 		}
 	}
 

@@ -6,8 +6,7 @@ import javax.inject.Inject;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
-import net.ftlines.wicket.cdi.NonContextual;
-
+import org.apache.wicket.cdi.NonContextual;
 import org.jboss.weld.environment.servlet.Listener;
 
 /**

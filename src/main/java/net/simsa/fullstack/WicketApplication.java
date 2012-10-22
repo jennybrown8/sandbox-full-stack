@@ -2,11 +2,11 @@ package net.simsa.fullstack;
 
 import javax.enterprise.inject.spi.BeanManager;
 
-import net.ftlines.wicket.cdi.CdiConfiguration;
 import net.ftlines.wicketsource.WicketSource;
 import net.simsa.fullstack.pages.EmailPage;
 import net.simsa.fullstack.pages.HomePage;
 
+import org.apache.wicket.cdi.CdiConfiguration;
 import org.apache.wicket.protocol.http.WebApplication;
 import org.jboss.weld.environment.servlet.Listener;
 

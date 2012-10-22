@@ -1,7 +1,6 @@
 package net.simsa.fullstack.entity.util;
 
-import net.ftlines.wicket.cdi.CdiContainer;
-
+import org.apache.wicket.cdi.CdiContainer;
 import org.apache.wicket.extensions.markup.html.repeater.util.SortableDataProvider;
 import org.apache.wicket.model.IModel;
 
@@ -11,7 +10,7 @@ import org.apache.wicket.model.IModel;
  * 
  * @param <T>
  */
-public abstract class EntityProvider<T> extends SortableDataProvider<T> {
+public abstract class EntityProvider<T,S> extends SortableDataProvider<T,S> {
 	public EntityProvider()
 	{
 		CdiContainer.get().getNonContextualManager().inject(this);
